@@ -1,0 +1,11 @@
+AWSTemplateFormatVersion : '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+
+Description: Message Processor Java 8 function
+Resources:
+  InboundMessageProcessor:
+    Type: AWS::Serverless::Function
+    Properties:
+      Runtime: java8
+      Handler: ConsumerFunctionHandler
+      CodeUri: ./target/inbound-message-processor-1.0-SNAPSHOT-aws.jar
